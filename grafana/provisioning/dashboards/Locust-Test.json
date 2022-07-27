@@ -20,7 +20,7 @@
       }
     ]
   },
-  "description": "Locust Exporter - Container Solutions",
+  "description": "Locust Test",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 11985,
@@ -1551,5 +1551,5 @@
   "timezone": "browser",
   "title": "Locust Test",
   "uid": "0WllLp6mq",
-  "version": 4
+  "version": 1
 }
