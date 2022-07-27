@@ -32,6 +32,10 @@ To debug all the logs from services run:
 
     docker-compose up
 
+For the local test development outside docker environment, install the dependencies:
+
+    pip3 install -r requirements.txt
+
 ## Services and addresses
 
 | Service          | Address                       | Description                          |
