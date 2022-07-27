@@ -27,24 +27,9 @@ services:
         volumes:
             - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
 
-#    grafana:
-#        image: grafana/grafana-oss:latest
-#        environment:
-#            - GF_SECURITY_ADMIN_USER=admin
-#            - GF_SECURITY_ADMIN_PASSWORD=admin
-#        container_name: grafana
-#        ports:
-#            - "3000:3000"
-##        volumes:
-##            - grafana-storage:/var/lib/grafana # Run Grafana container with persistent storage
-#        depends_on:
-#            - prometheus
-
     grafana:
         image: ubuntu/grafana:latest
         environment:
-#            - GF_SECURITY_ADMIN_USER=admin
-#            - GF_SECURITY_ADMIN_PASSWORD=admin
             - GF_AUTH_BASIC_ENABLED=false
             - GF_AUTH_ANONYMOUS_ENABLED=true
             - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
@@ -52,16 +37,6 @@ services:
         ports:
             - "3000:3000"
         volumes:
-#            - grafana-storage:/var/lib/grafana # Run Grafana container with persistent storage
-#            - ./grafana/provisioning/datasources/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
-#            - ./grafana/provisioning/dashboards/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml
-#            - ./grafana/provisioning/dashboards/Locust-Tests-1.json:/etc/grafana/provisioning/dashboards/Locust-Tests-1.json
             - ./grafana/provisioning/:/etc/grafana/provisioning/
         depends_on:
             - prometheus
-
-#volumes:
-#  grafana-storage:
-#    driver: flocker
-#    driver_opts:
-#      size: "10GiB"
