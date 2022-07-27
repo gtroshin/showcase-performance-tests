@@ -2,7 +2,8 @@
 ![Python 3.9.1](https://img.shields.io/badge/Python-3.9.1-green.svg)
 ![Locust 2.10.1](https://img.shields.io/badge/Locust-2.10.1-purple.svg)
 
-This project is designed to run performance tests using Locust framework against the services with a following profile:
+This project is designed to run performance tests using the Locust framework against the services with the following
+profile:
 
 Number of users (peak concurrency): 4 \
 Spawn rate (users started/second): 10 \
@@ -23,11 +24,11 @@ Grafana's settings, including the data source and a dashboard pre-provisioned.
 
 ## Development
 
-To start all the services, run the following command in project root folder:
+To start all the services, run the following command in the project root folder:
 
     docker-compose up -d && docker-compose logs locust --follow
 
-To debug all the log from services run:
+To debug all the logs from services run:
 
     docker-compose up
 
