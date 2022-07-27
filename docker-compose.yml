@@ -2,11 +2,12 @@ version: "3.9"
 services:
     locust:
         image: locustio/locust:latest
+        container_name: locust
         ports:
             - "8089:8089"
         volumes:
             - ./performance_tests/:/mnt/locust
-        command: -H https://api.kraken.com --autostart -r 10 -u 4 -t 5m --locustfile /mnt/locust/kraken_tests.py
+        command: -H https://api.kraken.com --autostart -r 10 -u 4 -t 5m --locustfile /mnt/locust/kraken_tests.py --print-stats --exit-code-on-error 1
 
     locust-metrics-exporter:
         image: containersol/locust_exporter:latest
