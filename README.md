@@ -26,7 +26,7 @@ Grafana's settings, including the data source and a dashboard pre-provisioned.
 
 To start all the services, run the following command in the project root folder:
 
-    docker-compose up -d && docker-compose logs locust --follow
+    docker-compose up -d && docker-compose logs --follow locust
 
 To debug all the logs from services run:
 
